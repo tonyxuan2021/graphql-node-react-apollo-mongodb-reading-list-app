@@ -1,8 +1,16 @@
 const express = require('express');
 const { graphqlHTTP } = require('express-graphql');
 const schema = require('./schema/schema');
+require('dotenv').config();
+const mongoose = require('mongoose');
 
 const app = express();
+
+mongoose
+  .connect(
+    `mongodb+srv://tonyxuan2023:${process.env.PASSWORD_MONGODB}@cluster0.7iwe822.mongodb.net/?retryWrites=true&w=majority`
+  )
+  .then(() => console.log('Connected!'));
 
 app.use(
   '/graphql',
