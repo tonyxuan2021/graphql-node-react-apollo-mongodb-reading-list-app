@@ -5,6 +5,7 @@ import {
   InMemoryCache,
   gql,
 } from '@apollo/client';
+import AddBook from './components/AddBook';
 
 // apollo client setup
 const client = new ApolloClient({
@@ -18,6 +19,7 @@ function App() {
       <div className="App">
         <h1>Ninja's Reading List</h1>
         <BookList />
+        <AddBook />
       </div>
     </ApolloProvider>
   );
