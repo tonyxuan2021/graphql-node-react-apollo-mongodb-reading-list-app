@@ -35,7 +35,13 @@ const AddBook = () => {
   const submitForm = (e) => {
     e.preventDefault();
     // console.log(state);
-    addBook();
+    addBook({
+      variables: {
+        name: state.name,
+        genre: state.genre,
+        authorId: state.authorId,
+      },
+    });
   };
 
   return (
